@@ -40,9 +40,8 @@ body {
     position: absolute;
     margin: 50px;
     top: 40vh;
-    left: 21vh;
     height: 10px;
-    width: 350px;
+    width: 380px;
     cursor: pointer;
 }
 
@@ -50,9 +49,9 @@ body {
     position: absolute;
     margin: 50px;
     top: 50vh;
-    left: 21vh;
+
     height: 10px;
-    width:350px;
+    width:380px;
     cursor: pointer;
 }
 h3{

@@ -41,6 +41,7 @@ var mue = document.getElementById("mue");
 var load = document.getElementById("load");
 let mueval=0;
 let loadval=0;
+var initialValue = 0;
 
 //slider for mue
 mue.oninput = (()=>{
@@ -48,6 +49,7 @@ mue.oninput = (()=>{
   let value2=parseFloat(document.querySelector("#load").value);
   mueval=value1/100;
   loadval=value2*100;
+  load.value=initialValue;
 
   two.update();
   
@@ -60,9 +62,9 @@ var statement = two.makeText("For different poisson's ratio we can show variatio
 statement.size = 20;
 var muetext= two.makeText("μ",25,305);
 muetext.size = 32;
-var pos = two.makeText("0",80,330);
+var pos = two.makeText("0",60,350);
 pos.size = 15;
-var pos1 = two.makeText("0.5",420,330);
+var pos1 = two.makeText("0.5",400,350);
 pos1.size = 15;
 var loadtext1 = two.makeText("p", 25, 383);
 loadtext1.size = 32;
@@ -81,7 +83,7 @@ two.update();
 load.oninput = (()=>{
   let value1= parseFloat(document.querySelector("#mue").value);
   let value2=parseFloat(document.querySelector("#load").value);
-  mueval=value1/100;
+  mueval=value1/50;
   loadval=value2*100;
   //update points of your path
   if(value1==0){
