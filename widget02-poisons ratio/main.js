@@ -48,24 +48,6 @@ mue.oninput = (()=>{
   let value2=parseFloat(document.querySelector("#load").value);
   mueval=value1/100;
   loadval=value2*100;
-  console.log(mueval,loadval);
-  //update points 
-  if(value1==0){
-    points1[0].x= ax - loadval/30;
-    points1[1].x= bx + loadval/30
-    points1[3].x= ax - loadval/30;
-    points1[2].x= bx + loadval/30;
-    }
-    else{
-      points1[0].x= ax - loadval/30;
-      points1[1].x= bx + loadval/30
-      points1[3].x= ax - loadval/30;
-      points1[2].x= bx + loadval/30;
-      points1[0].y= ay + mueval*(loadval/50);
-      points1[1].y= ay + mueval*(loadval/50);
-      points1[2].y= by - mueval*(loadval/50);
-      points1[3].y= by - mueval*(loadval/50);
-    }
 
   two.update();
   
@@ -101,7 +83,6 @@ load.oninput = (()=>{
   let value2=parseFloat(document.querySelector("#load").value);
   mueval=value1/100;
   loadval=value2*100;
-  console.log(mueval,loadval);
   //update points of your path
   if(value1==0){
   points1[0].x= ax - loadval/30;
