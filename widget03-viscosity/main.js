@@ -9,6 +9,8 @@ var ax = 90;
 var bx = 390;
 var by= 180;
 var ay= 100;
+var cx=90;
+var cy=160;
 
 
 
@@ -42,76 +44,106 @@ var points3= [
   new Two.Anchor(ax+50, ay-10),
   new Two.Anchor(ax, ay-10),
 ];
+var points4=[
+  new Two.Anchor(ax, by),
+  new Two.Anchor(ax,by),
+  new Two.Anchor(ax+25, ay),
+  new Two.Anchor(ax+25, ay),
+]
+var points5=[
+  new Two.Anchor(cx,cy),
+  new Two.Anchor(cx+5,cy+6),
+]
+
 
 
 var graph1 = new Graph(two, points1," " , "#276BB0", 0.5, 4);
 var graph2 = new Graph(two, points2," " , "#grey", 0.5, 4);
 var graph3 = new Graph(two, points3," " , "#grey", 0.5, 4);
+var graph4 = new Graph(two, points4," " , "#black", 0.5, 4);
+var graph5 = new Graph(two, points5," " , "#black", 0.5, 4);
 
 
 //sliders
 var mue = document.getElementById("mue");
-var time = document.getElementById("time");
+var submit = document.getElementById("submit");
 var initialValue = 1;
 
-//slider for mue
-mue.oninput = (()=>{
-  let value1= parseFloat(document.querySelector("#mue").value);
-  let value2=parseFloat(document.querySelector("#time").value);
-  time.value=initialValue;
-  console.log(value1,value2);
-  
-
-
-  two.update();
-})
 //adding text
-var muetext= two.makeText("μ",25,305);
+var muetext= two.makeText("μ",25,240);
 muetext.size = 32;
-var pos = two.makeText("1 centipoise",100,330);
+var muetext= two.makeText("γ",96,145);
+muetext.size = 15;
+var pos = two.makeText("1 centipoise",90,270);
 pos.size = 15;
-var pos1 = two.makeText("100 centipoise",440,330);
-pos1.size = 15;
-var loadtext1 = two.makeText("t", 25, 383);
-loadtext1.size = 32;
-var pos = two.makeText("0 sec",80,410);
-pos.size = 15;
-var pos1 = two.makeText("100 sec",420,410);
+var pos1 = two.makeText("100 centipoise",400,270);
 pos1.size = 15;
 //adding rectangle
 var l1 = two.makeLine(ax,ay,bx,ay);
 var l2 = two.makeLine(ax,ay,ax,by);
 var l1 = two.makeLine(ax,by,bx,by);
 var l1 = two.makeLine(bx,by,bx,ay);
+//adding angleline
+
+
 two.update();
+//force
+var force = two.makeText("→ F", ax+75,ay-10)
+force.size=20;
+
+// Create a Two.js text element for displaying the duration
+var durationText = two.makeText("Duration: ", 250, 330);
+durationText.size = 14;
+two.add(durationText);
 
 //slider for load
-time.oninput = (()=>{
-  let value1= parseFloat(document.querySelector("#mue").value);
-  let value2=parseFloat(document.querySelector("#time").value);
-  let mueval= value1*2;
-  let timeval= value2*5;
-  console.log(value1,value2)
-  if(value1==1){
-    points3[0].x= ax + timeval;
-    points3[1].x= ax+50 + timeval;
-    points3[2].x= ax+50 + timeval ; 
-    points3[3].x= ax + timeval;
+submit.onclick = () => {
+  let value1 = mue.value;
+  var duration = 1000*value1/2; // Total animation duration in milliseconds
+  var startTime = null;
+
+  // Define the animation function
+  function animate(timestamp) {
+     
+
+    if (!startTime) {
+      startTime = timestamp;
     }
-    if(value2==1){
-      points3[0].x= ax ;
-      points3[1].x= ax+50 ;
-      points3[2].x= ax+50 ; 
-      points3[3].x= ax ;
-      }
-    else{
-      points3[0].x= ax + timeval*2/mueval;
-      points3[1].x= ax+50 + timeval*2/mueval;
-      points3[2].x= ax+50 + timeval*2/mueval;
-      points3[3].x= ax + timeval*2/mueval ;
-    }
+
+    const elapsedTime = (timestamp - startTime);
+    
+    // Calculate the progress of the animation (between 0 and 1)
+    const progress = Math.min(1, elapsedTime / duration);
+
+    // Update points gradually based on the progress
+    points3[0].x = ax+(bx-150)*progress;
+    points3[1].x = ax+50+(bx-140)*progress;
+    points3[2].x = ax+50+(bx-140)*progress;
+    points3[3].x = ax+(bx-150)*progress;
+    points4[2].x = ax + 25 + (bx-140)*progress
+    points4[3].x = ax + 25 + (bx-140)*progress
+    points5[1].x = cx + 5+ 12*progress;
+    points5[1].y = cy + 5+ 11*progress;
+    force.translation.set(ax+75+(bx-140)*progress,ay-10);
+    // Update the duration text element
+    durationText.value = 'Duration: ' + duration/100 + 's';
+
+    console.log(value1)
+    
     two.update();
-  
 
+    if (progress < 1) {
+      // Continue the animation
+      requestAnimationFrame(animate);
+    } else {
+      console.log('Animation complete');
+    }
+  }
 
-})
+  // Start the animation
+  requestAnimationFrame(animate);
+  console.log(duration);
+
+};
+
+    

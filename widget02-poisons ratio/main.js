@@ -33,6 +33,7 @@ var points1 = [
 ];
 
 
+
 var graph1 = new Graph(two, points1," " , "#276BB0", 0.5, 4);
 
 
