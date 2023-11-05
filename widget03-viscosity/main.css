@@ -58,5 +58,9 @@ button{
   width: 60px;
   height: 30px;
   box-sizing: border-box;
-  box-shadow: 2px 2px rgb(109, 106, 106);
+}
+button:hover{
+    cursor: pointer;
+    background-color: grey;
+    box-shadow: 2px rgb(31, 31, 31);
 }
