@@ -78,9 +78,9 @@ var larrow1=new eigenLine(two, ax, ay+70, arrowX, ay+70, 2, "black", "arrow");
 var larrow2=new eigenLine(two, bx, ay+70, arrowX, ay+70, 2, "black", "arrow");
 var line = two.makeText('|',arrowX,ay+70);
 line.size = 18;
-var ltext= two.makeText('L',(arrowX+ax)/2,ay+80);
+var ltext= two.makeText('x',(arrowX+ax)/2,ay+80);
 ltext.size=16;
-var Xtext= two.makeText('X',(arrowX+bx)/2,ay+80);
+var Xtext= two.makeText('l',(arrowX+bx)/2,ay+80);
 Xtext.size=16;
 //sliders
 var length = document.getElementById("length");
