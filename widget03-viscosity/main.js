@@ -5,11 +5,11 @@ import Graph from "./js/graph.js";
 var ob2 = document.getElementById("canvas_1");
 var slider_y1= 350;
 var slider_y2= 450;
-var ax = 90;
-var bx = 390;
+var ax = 60;
+var bx = 360;
 var by= 180;
 var ay= 100;
-var cx=90;
+var cx=60;
 var cy=160;
 
 
@@ -74,9 +74,9 @@ var muetext= two.makeText("μ",25,240);
 muetext.size = 32;
 var muetext= two.makeText("γ",96,145);
 muetext.size = 15;
-var pos = two.makeText("1 centipoise",90,270);
+var pos = two.makeText("1 centipoise",60,270);
 pos.size = 15;
-var pos1 = two.makeText("100 centipoise",400,270);
+var pos1 = two.makeText("100 centipoise",360,270);
 pos1.size = 15;
 //adding rectangle
 var l1 = two.makeLine(ax,ay,bx,ay);
@@ -92,7 +92,7 @@ var force = two.makeText("→ F", ax+75,ay-10)
 force.size=20;
 
 // Create a Two.js text element for displaying the duration
-var durationText = two.makeText("Duration: ", 250, 330);
+var durationText = two.makeText("Duration: ", 230, 350);
 durationText.size = 14;
 two.add(durationText);
 
@@ -116,17 +116,17 @@ submit.onclick = () => {
     const progress = Math.min(1, elapsedTime / duration);
 
     // Update points gradually based on the progress
-    points3[0].x = ax+(bx-150)*progress;
-    points3[1].x = ax+50+(bx-140)*progress;
-    points3[2].x = ax+50+(bx-140)*progress;
-    points3[3].x = ax+(bx-150)*progress;
-    points4[2].x = ax + 25 + (bx-140)*progress
-    points4[3].x = ax + 25 + (bx-140)*progress
+    points3[0].x = ax+(bx-120)*progress;
+    points3[1].x = ax+50+(bx-110)*progress;
+    points3[2].x = ax+50+(bx-110)*progress;
+    points3[3].x = ax+(bx-120)*progress;
+    points4[2].x = ax + 25 + (bx-120)*progress
+    points4[3].x = ax + 25 + (bx-120)*progress
     points5[1].x = cx + 5+ 12*progress;
     points5[1].y = cy + 5+ 11*progress;
-    force.translation.set(ax+75+(bx-140)*progress,ay-10);
+    force.translation.set(ax+75+(bx-100)*progress,ay-10);
     // Update the duration text element
-    durationText.value = 'Duration: ' + duration/100 + 's';
+    durationText.value = 'Duration: ' + duration/1000 + 's';
 
     console.log(value1)
     
