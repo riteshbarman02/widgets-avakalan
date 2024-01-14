@@ -23,14 +23,14 @@ js/graph.js: JavaScript file defining a class for creating and updating the grap
 Responsive Design<br>
 The webpage is designed to be responsive, adjusting the layout and styling for different screen sizes, with a special focus on smaller screens (less than 600px width).<br><br>
 
-@media (max-width: 600px) {
-    /* Mobile-friendly styles go here */
-    .myCanvas {
-        width: 100%;
-        height: 100%;
-    }
-    /* Additional styles for smaller screens */
-}
+@media (max-width: 600px) {<br>
+    /* Mobile-friendly styles go here */<br>
+    .myCanvas {<br>
+        width: 100%;<br>
+        height: 100%;<br>
+    }<br>
+    /* Additional styles for smaller screens */<br>
+}<br><br>
 Contributing<br>
 Feel free to fork the repository, make changes, and create pull requests. Contributions are welcome!<br>
 
