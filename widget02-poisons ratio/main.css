@@ -38,18 +38,17 @@ body {
 
 #mue{
     position: absolute;
-    margin: 50px;
-    top: 40vh;
+    top: 50vh;
     height: 10px;
     width: 380px;
+    margin-left: 40px;
     cursor: pointer;
 }
 
 #load{
     position: absolute;
-    margin: 50px;
-    top: 50vh;
-
+    top: 60vh;
+    margin-left: 40px;
     height: 10px;
     width:380px;
     cursor: pointer;
@@ -58,4 +57,19 @@ h3{
     text-align: center;
     position: relative;
     top: 30px;
+}
+@media (max-width: 600px) {
+
+    .myCanvas {
+        width: 100%; /* Adjust the width for smaller screens */
+        height:100%
+    }
+    #load {
+        top: 68%;
+        left:4% /* Center the input within the container */
+    }
+    #mue {
+        top: 56%;
+        left: 4%; /* Center the input within the container */
+    }
 }
