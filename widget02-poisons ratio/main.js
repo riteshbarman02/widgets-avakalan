@@ -6,10 +6,10 @@ import Graph from "./js/graph.js";
 var ob2 = document.getElementById("canvas_1");
 var slider_y1= 350;
 var slider_y2= 450;
-var ax = 120;
-var bx = 380;
-var by= 180;
-var ay= 100;
+var ax = 90;
+var bx = 340;
+var by= 100;
+var ay= 0;
 
 
 
@@ -17,12 +17,12 @@ var ay= 100;
 // Create a Two.js instance
 var two = new Two({
   fullscreen: false,
-  width: 500,
-  height: 800,
+  width : 400,
+
 }).appendTo(ob2);
 
 //creating twojs lines for graph
-var domian = new eigenLine(two, 60, 140, 440, 140, 4, "black", "arrow");
+var domian = new eigenLine(two, 30, 50, 390, 50, 4, "black", "arrow");
 
 var points1 = [
   new Two.Anchor(ax, ay),
@@ -35,7 +35,8 @@ var points1 = [
 
 
 var graph1 = new Graph(two, points1," " , "#276BB0", 0.5, 4);
-
+var statement = two.makeText("For different poisson's ratio we can show\n variations",200,150);
+statement.size = 17;
 
 //sliders
 var mue = document.getElementById("mue");
@@ -56,23 +57,6 @@ mue.oninput = (()=>{
   
 
 })
-//adding text
-var loadtext = two.makeText("P", 30, 153);
-loadtext.size = 32;
-var statement = two.makeText("For different poisson's ratio we can show variation",250,240);
-statement.size = 20;
-var muetext= two.makeText("μ",25,305);
-muetext.size = 32;
-var pos = two.makeText("0",60,340);
-pos.size = 15;
-var pos1 = two.makeText("0.5",400,340);
-pos1.size = 15;
-var loadtext1 = two.makeText("p", 25, 383);
-loadtext1.size = 32;
-var pos = two.makeText("100KN",80,410);
-pos.size = 15;
-var pos1 = two.makeText("1000KN",420,410);
-pos1.size = 15;
 //adding rectangle
 var l1 = two.makeLine(ax,ay,bx,ay);
 var l2 = two.makeLine(ax,ay,ax,by);
