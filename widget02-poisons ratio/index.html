@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Line with Perpendicular Bar Ends Example</title>
+  <title>POISON'S RATIO</title>
   <link rel="stylesheet" href="main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.7.0/two.js"></script>
@@ -11,9 +11,22 @@
     <div class="container">
             <div class="myCanvas" id="canvas_1">
               <h3>POISSON'S RATIO</h3>
-              <input type="range" name="mue" id="mue" min="0" max="50" value="0" step="1">
-              <input type="range" name="load" id="load" min="0" max="10" value="0" step="0.1">
-
+             <div class="inputs">
+             <label for="mue">μ
+                <input type="range" name="mue" id="mue" min="0" max="50" value="0" step="1">
+                <div class="range">
+                  <p>1Centipoise</p>
+                  <p>100Centipoise</p>
+                </div>
+             </label>
+             <label for="load">P
+                <input type="range" name="load" id="load" min="0" max="10" value="0" step="0.1">
+                <div class="rangel">
+                  <p>100KN</p>
+                  <p>1000KN</p>
+                </div>
+            </label>
+            </div>
             </div>
         </div>
     </div>
