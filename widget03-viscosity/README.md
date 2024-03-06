@@ -19,12 +19,16 @@ To run the project locally:
 
 1. Clone the repository:
     ```bash
-    git clone 
+    git clone https://github.com/riteshbarman02/widgets-avakalan/tree/master/widget03-viscosity
     ```
 
 2. Open the project folder.
 
-3. Optionally, serve the files using a local development server or simply open the `index.html` file in a web browser.
+3. Open with VScode.
+
+4. Open 'index.html' from the folder.
+
+5. start the live server by clicking on go live .
 
 ## Usage
 
