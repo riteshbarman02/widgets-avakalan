@@ -19,7 +19,7 @@ To run the project locally:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/riteshbarman02/widgets-avakalan/tree/master/widget03-viscosity
+    git clone https://github.com/riteshbarman02/widgets-avakalan/tree/master/widget04-temperature
     ```
 
 2. Open the project folder.
